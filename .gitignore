@@ -37,4 +37,4 @@ report.html
 !.gitignore
 !.gitkeep
 !.travis.yml
-!src/collective
+!src/Products
