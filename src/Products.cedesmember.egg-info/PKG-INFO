@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: Products.cedesmember
+Version: 1.4
+Summary: Member management for cedes product
+Home-page: http://svn.plone.org/svn/collective/
+Author: 
+Author-email: 
+License: gpl
+Description: ()
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Provides-Extra: test

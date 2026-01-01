@@ -1,0 +1,13 @@
+To: <span tal:replace="here/email_from_address" />, <span tal:replace="here/extra_email_to_addresses" />
+From: "<span tal:replace="here/email_from_name" />" <<span tal:replace="here/email_from_address" />>
+Subject: Cedes - Nouvelle inscription
+Content-Type: text/plain; charset=<span tal:replace="here/portal_properties/site_properties/default_charset" />
+
+Identifiant : <span tal:replace="context/REQUEST/id" />
+
+Nom  : <span tal:replace="context/REQUEST/fullname" /> <span tal:replace="context/REQUEST/firstname" />
+Institution : <span tal:replace="context/REQUEST/school_name" />
+Téléphone      : <span tal:replace="context/REQUEST/phone" />
+Email      : mailto:<span tal:replace="context/REQUEST/email" />
+
+<span tal:replace="string:${here/portal_url}/portal_memberdata/${context/REQUEST/id}" />

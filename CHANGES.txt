@@ -1,0 +1,27 @@
+Changelog
+=========
+
+1.4 (2021-02-16)
+----------------
+
+- Added method CedesMember.removeFailedAccounting that will remove the bill_accounting_failed marker.
+
+1.3 (2021-01-10)
+----------------
+
+- Try to protect registration form against robots by adding computation field and CSS hidden field that should not be filled.
+
+1.2 (2020-01-21)
+----------------
+
+- During registration of new member, validate that email is not already used by another account, except for some specific domains (@unamur.be, ...)
+
+1.1 (2018-11-10)
+----------------
+- Eggified package.
+
+1.0 (2018/01/01)
+----------------
+
+- Package created using templer
+  []

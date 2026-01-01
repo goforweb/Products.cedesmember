@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="passwordresettool">
+<body>
+
+<div metal:fill-slot="main">
+    <h1 class="documentFirstHeading">Bienvenue sur CeDES.be</h1>
+    <br />
+
+    <p>
+       Vous pouvez, dès à présent, vous identifier et bénéficier des possibilités offertes par l'abonnement CeDES free.
+    </p>
+    <p>
+       Une facture spécifiant les modalités de paiement vous sera envoyée dans un délai de 3 jours ouvrables. Dès réception du montant requis, le CeDES créditera votre compte. Vous aurez alors accès à l’entièreté des fonctionnalités de votre abonnement 100%.
+    </p>
+
+</div>
+
+</body>
+</html>

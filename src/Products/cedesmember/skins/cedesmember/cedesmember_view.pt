@@ -1,0 +1,187 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml"
+  xml:lang="en-US"
+  lang="en-US"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"      
+  i18n:domain="plone">
+  
+  <metal:block define-macro='css'>
+    <tal:block define="dummy python:request.set('disable_border',1)" />
+  </metal:block>
+  
+  <metal:block define-macro='header'>
+    <h1 class="brownHeader">
+      Données personnelles
+    </h1>
+    <br/>
+    <a href=""
+      class="link-parent"
+      tal:attributes="href string: $portal_url/plone_memberprefs_panel"
+      tal:condition="python:here.id ==member.id">
+      Retourner au menu : « Mon compte » 
+    </a>
+  </metal:block>
+  
+  <metal:body_macro metal:define-macro="body" i18n:domain="cedesmember">
+    
+    <fieldset>
+      <legend>Vos informations d'abonné</legend>
+      <div class="field">
+        <label i18n:translate="cedesmember_label_id"></label>&nbsp;:
+        <metal:fieldMacro use-macro="python: here.widget('id', mode='view')" />
+      </div>
+      <div class="field">
+        <label i18n:translate="cedesmember_label_email"></label>&nbsp;:
+        <metal:fieldMacro use-macro="python: here.widget('email', mode='view')" />
+      </div>
+      <div class="field">
+        <label i18n:translate="cedesmember_label_member_type"></label>&nbsp;:
+        <metal:fieldMacro use-macro="python: here.widget('member_type', mode='view')" />
+      </div>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Vos coordonnées</legend>
+      <span tal:define="label_style string:float:left;;width:300px;;text-align:right;;padding-right:7px;;">
+        
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_fullname" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('fullname', mode='view')" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_lastname_married" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('lastname_married', mode='view')" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_firstname" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('firstname', mode='view')" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_address" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('address', mode='view')" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_postal_code" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('postal_code', mode='view')" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_locality" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('locality', mode='view')" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_country" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('country', mode='view')" />
+        </div>        
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_phone" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('phone', mode='view')" />
+        </div>
+      </span>
+    </fieldset>
+
+    <fieldset>
+      <legend>Type d'enseignement</legend>
+      <span tal:define="label_style string:float:left;;width:210px;;text-align:right;;padding-right:7px;;">
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_network" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('network', mode='view')" />
+        </div>
+      </span>
+      <span tal:define="label_style string:float:left;;width:210px;;text-align:right;;padding-right:7px;;">
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_degree" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('degree', mode='view')" />
+        </div>
+      </span>
+      <span tal:define="label_style string:float:left;;width:210px;;text-align:right;;padding-right:7px;;">
+        
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_section" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('section', mode='view')" />
+        </div>
+      </span>
+      <span tal:define="label_style string:float:left;;width:210px;;text-align:right;;padding-right:7px;;">
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_teacher_number" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('teacher_number', mode='view')" />
+        </div>
+      </span>
+    </fieldset>
+
+    <fieldset>
+      <legend>Coordonnées de l'institution</legend>
+      <span tal:define="label_style string:float:left;;width:215px;;text-align:right;;padding-right:7px;;">
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_school_name" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('school_name', mode='view', use_label=1)" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_school_address" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('school_address', mode='view', use_label=1)" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_school_postal_code" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('school_postal_code', mode='view', use_label=1)" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_school_locality" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('school_locality', mode='view', use_label=1)" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_school_country" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('school_country', mode='view')" />
+        </div>  
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_school_phone" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('school_phone', mode='view', use_label=1)" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_school_fax" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('school_fax', mode='view', use_label=1)" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_school_email" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('school_email', mode='view', use_label=1)" />
+        </div>      
+      </span>                            
+    </fieldset>
+
+    <fieldset tal:condition="python:here.member_type == 'CeDES 100%'">
+      <legend>Facturation</legend>
+        <span tal:define="label_style string:float:left;;width:165px;;text-align:right;;padding-right:7px;;">
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_bill_tva" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('bill_tva', mode='view', use_label=1)" />
+        </div>  
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_bill_email" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('bill_email', mode='view', use_label=1)" />
+        </div>  
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_bill_name" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('bill_name', mode='view', use_label=1)" />
+        </div>  
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_bill_address" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('bill_address', mode='view', use_label=1)" />
+        </div>  
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_bill_postal_code" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('bill_postal_code', mode='view', use_label=1)" />
+        </div>  
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_bill_locality" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('bill_locality', mode='view', use_label=1)" />
+        </div>
+        <div class="field" style="clear:both;">
+          <label i18n:translate="cedesmember_label_bill_country" tal:attributes="style label_style | nothing;"></label>&nbsp;:
+          <metal:fieldMacro use-macro="python: here.widget('bill_country', mode='view', use_label=1)" />
+        </div>
+        </span>
+     </fieldset>
+  </metal:body_macro>
+
+  <metal:block define-macro='footer' />
+
+</html>

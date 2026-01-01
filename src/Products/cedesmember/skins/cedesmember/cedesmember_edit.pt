@@ -1,0 +1,38 @@
+
+<metal:block define-macro='topslot'>
+  <tal:block define="dummy python:request.set('disable_border',1)" />
+</metal:block>
+
+<metal:block define-macro='header'>
+    <h1 class="brownHeader">
+        Editer mes données personnelles
+    </h1>
+    
+    <a href=""
+       class="link-parent"
+       tal:attributes="href string: ${portal_url}/plone_memberprefs_panel"
+       tal:define="member context/@@plone_portal_state/member;"
+       tal:condition="python:here.id==member.id">
+        Retourner au menu : « Mon compte » 
+    </a>
+</metal:block>
+  
+<metal:block define-macro='body'>
+<metal:block use-macro="here/edit_macros/macros/body">
+<metal:block fill-slot="widgets">
+<div>
+              <metal:macro use-macro="here/common_member_macros/macros/edit-identification"/>
+              
+              <metal:macro use-macro="here/common_member_macros/macros/general-fields"/>
+              
+              <span tal:define="member context/@@plone_portal_state/member;"
+                    tal:condition="python:member.has_role('Manager') or not(member.isCedesFree())" tal:omit-tag="">
+              <metal:macro use-macro="here/common_member_macros/macros/bill-fields"/>
+              </span>
+</div>
+
+</metal:block>      
+</metal:block>
+</metal:block>
+
+<metal:block define-macro='footer' />

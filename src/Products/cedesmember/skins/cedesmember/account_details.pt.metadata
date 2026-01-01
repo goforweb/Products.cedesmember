@@ -1,0 +1,5 @@
+[default]
+title=Account details
+
+[security]
+View=0:Manager

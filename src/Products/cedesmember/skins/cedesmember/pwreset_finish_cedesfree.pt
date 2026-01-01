@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="passwordresettool">
+<body>
+
+<div metal:fill-slot="main">
+    <h1 class="documentFirstHeading">Bienvenue sur CeDES.be</h1>
+    <br />
+    <p>
+      Vous pouvez, dès à présent, vous identifier et bénéficier des possibilités offertes par l'abonnement CeDES free. 
+    </p>
+    <p>N'oubliez pas que la fonctionnalité "moteur de recherche" vous est gracieusement ouverte durant 7 jours; profitez-en sans tarder !
+    </p>
+
+</div>
+
+</body>
+</html>

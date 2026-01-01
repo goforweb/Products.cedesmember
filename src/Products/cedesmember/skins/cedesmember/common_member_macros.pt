@@ -1,0 +1,143 @@
+<metal:macro define-macro="registration-identification">
+<fieldset i18n:domain="plone">
+  <legend>Vos informations d'abonné</legend>
+  <metal:fieldMacro use-macro="python: here.widget('id', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('email', mode='edit')" />
+  <input type="hidden" name="type" tal:attributes="value type"/>
+  <input type="hidden" name="member_type" tal:attributes="value member_type"/>
+  <metal:fieldMacro use-macro="python: here.widget('legal_validation', mode='edit')" />
+</fieldset>
+</metal:macro>
+
+<metal:macro define-macro="edit-identification">
+<fieldset tal:define="member context/@@plone_portal_state/member;"
+          tal:condition="python:member.has_role('Manager')">
+  <legend>Type de membre</legend>
+  <metal:fieldMacro use-macro="python: here.widget('roles', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('member_type', mode='edit')" />
+</fieldset>
+<fieldset>
+<legend>Vos informations d'abonné</legend>
+<metal:fieldMacro use-macro="python: here.widget('email', mode='edit')" />
+<metal:fieldMacro use-macro="python: here.widget('legal_validation', mode='edit')"/>
+</fieldset>
+</metal:macro>
+
+
+<metal:macro define-macro="general-fields">
+<fieldset>
+  <legend>Vos coordonnées</legend>
+  
+  <span class="memberStyleMarker">
+  <metal:fieldMacro use-macro="python: here.widget('fullname', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('lastname_married', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('firstname', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('country', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('address', mode='edit')" /> <div style="clear:both;"></div>
+  <metal:fieldMacro use-macro="python: here.widget('postal_code', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('locality', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('phone', mode='edit')" />
+  <span tal:omit-tag="" tal:define="required python:test(template.id=='training_registration', True, False);">
+   <metal:fieldMacro use-macro="python: here.widget('teacher_number', mode='edit')" />
+  </span>
+  </span>                                
+
+</fieldset>
+                            
+<fieldset>
+  <legend>Type d'enseignement</legend>
+  
+  <span class="memberStyleMarkerFormQuestion">
+  <metal:fieldMacro use-macro="python: here.widget('network', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('degree', mode='edit')" />
+  <span class="memberStyleMarkerFormQuestionSection">
+  <metal:fieldMacro use-macro="python: here.widget('section', mode='edit')" />
+  </span>
+  </span>
+</fieldset>
+
+<fieldset>
+  <legend>Coordonnées de l'institution</legend>
+  <span class="memberStyleMarker">
+  <metal:fieldMacro use-macro="python: here.widget('school_name', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('school_country', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('school_address', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('school_postal_code', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('school_locality', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('school_phone', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('school_fax', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('school_email', mode='edit')" />
+  </span>                            
+</fieldset>
+</metal:macro>
+
+<metal:macro define-macro="bill-fields">
+<fieldset>
+   <script language="javascript" type="text/javascript">
+         function feedBillInfo(bill_type) {
+           if (bill_type == 'bill_1'){
+            document.getElementById('bill_name').value= document.getElementById('firstname').value + ' ' + document.getElementById('fullname').value ;
+            document.getElementById('bill_country').value=document.getElementById('country').value ;
+            document.getElementById('bill_address').value=document.getElementById('address').value ;
+            document.getElementById('bill_postal_code').value=document.getElementById('postal_code').value ;
+            document.getElementById('bill_locality').value=document.getElementById('locality').value ;
+            document.getElementById('bill_email').value=document.getElementById('email').value ;
+           }
+           else{
+            if (bill_type == 'bill_2'){
+             document.getElementById('bill_name').value=document.getElementById('school_name').value ;
+             document.getElementById('bill_country').value=document.getElementById('school_country').value ;
+             document.getElementById('bill_address').value=document.getElementById('school_address').value ;
+             document.getElementById('bill_postal_code').value=document.getElementById('school_postal_code').value ;
+             document.getElementById('bill_locality').value=document.getElementById('school_locality').value ;
+             document.getElementById('bill_email').value=document.getElementById('school_email').value ;
+            }
+            else{
+            }
+           }          
+         }
+    </script>
+
+  <legend>Facturation</legend>
+  
+  <span class="memberStyleMarkerFormQuestion">
+  <metal:fieldMacro use-macro="python: here.widget('bill_tva', mode='edit')"/>
+  </span>
+
+  <span class="memberStyleMarkerFormQuestion">
+    <div class="field">
+      <label class="formQuestion label" for="bill">
+        Adresse de facturation        
+      </label>        
+      <input class="noborder" type="radio" name="bill" id="bill_1" value="" size="30" onclick="feedBillInfo(this.id)"><label for="bill_1">Utiliser vos coordonnées</label><br/>
+      <input class="noborder" type="radio" name="bill" id="bill_2" value="" size="30" onclick="feedBillInfo(this.id)"><label for="bill_2">Utiliser les coordonnées de l'institution</label><br/>
+      <input class="noborder" type="radio" name="bill" id="bill_3" value="" size="30" onclick="feedBillInfo(this.id)"><label for="bill_3">Autres coordonnées</label>
+    </div>
+  </span>
+
+  <span class="memberStyleMarker">
+  <metal:fieldMacro use-macro="python: here.widget('bill_email', mode='edit')" />   
+  <metal:fieldMacro use-macro="python: here.widget('bill_name', mode='edit')" />        
+  <metal:fieldMacro use-macro="python: here.widget('bill_country', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('bill_address', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('bill_postal_code', mode='edit')" />
+  <metal:fieldMacro use-macro="python: here.widget('bill_locality', mode='edit')" />
+  </span>                        
+</fieldset>
+</metal:macro>
+
+<metal:macro define-macro="inscription-warning">
+<dl class="portalMessage warning" tal:define="currentMember context/portal_membership/getAuthenticatedMember;
+                                              inSubscriptionProcess python: currentMember.getId() != context.getId();"
+                                  tal:condition="python: not currentMember.has_role('Manager')">
+<dt>Avertissement</dt>
+<dd>
+  <div tal:condition="python: inSubscriptionProcess and member_type == 'CeDES 100%'" tal:replace="structure here/pages/inscription-avertissement-cedes100pc/getText" tal:on-error="string:'inscription-avertissement-cedes100pc' manquant"></div>
+  <div tal:condition="python: inSubscriptionProcess and member_type == 'CeDES Free'" tal:replace="structure here/pages/inscription-avertissement-cedesfree/getText" tal:on-error="string:'inscription-avertissement-cedesfree' manquant"></div>
+  <tal:comment replace="nothing">A CeDES 100% renewing his subscription</tal:comment>
+  <div tal:condition="python: not inSubscriptionProcess and context.member_type == 'CeDES 100%'" tal:replace="structure here/pages/inscription-member-renew-100/getText" tal:on-error="string:'inscription-member-renew-100' manquant"></div>
+  <tal:comment replace="nothing">A CeDES Free switching to 100%</tal:comment>
+  <div tal:condition="python: not inSubscriptionProcess and context.member_type == 'CeDES Free'" tal:replace="structure here/pages/inscription-member-switch-100/getText" tal:on-error="string:'inscription-member-switch-100' manquant"></div>
+</dd>
+</dl>
+</metal:macro>

@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2012-01-11 14:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: cedesmember\n"
+
+msgid "cedesmember_label_teacher_number"
+msgstr ""
+
+msgid "cedesmember_label_id"
+msgstr ""
+
+msgid "cedesmember_label_email"
+msgstr ""
+
+msgid "cedesmember_label_member_type"
+msgstr ""
+
+msgid "cedesmember_label_legal_validation"
+msgstr ""
+
+msgid "cedesmember_label_lastname_married"
+msgstr ""
+
+msgid "cedesmember_label_firstname"
+msgstr ""
+
+msgid "cedesmember_label_country"
+msgstr ""
+
+msgid "cedesmember_label_address"
+msgstr ""
+
+msgid "cedesmember_label_postal_code"
+msgstr ""
+
+msgid "cedesmember_label_locality"
+msgstr ""
+
+msgid "cedesmember_label_phone"
+msgstr ""
+
+msgid "cedesmember_label_network"
+msgstr ""
+
+msgid "cedesmember_label_degree"
+msgstr ""
+
+msgid "cedesmember_label_section"
+msgstr ""
+
+msgid "cedesmember_label_school_name"
+msgstr ""
+
+msgid "cedesmember_label_school_country"
+msgstr ""
+
+msgid "cedesmember_label_school_address"
+msgstr ""
+
+msgid "cedesmember_label_school_postal_code"
+msgstr ""
+
+msgid "cedesmember_label_school_locality"
+msgstr ""
+
+msgid "cedesmember_label_school_phone"
+msgstr ""
+
+msgid "cedesmember_label_school_fax"
+msgstr ""
+
+msgid "cedesmember_label_school_email"
+msgstr ""
+
+msgid "cedesmember_label_bill_tva"
+msgstr ""
+
+msgid "cedesmember_label_bill_email"
+msgstr ""
+
+msgid "cedesmember_label_bill_name"
+msgstr ""
+
+msgid "cedesmember_label_bill_country"
+msgstr ""
+
+msgid "cedesmember_label_bill_address"
+msgstr ""
+
+msgid "cedesmember_label_bill_postal_code"
+msgstr ""
+
+msgid "cedesmember_label_bill_locality"
+msgstr ""
+
+msgid "cedesmember_label_account_balance"
+msgstr ""
+
+msgid "cedesmember_label_account_transactions"
+msgstr ""
+
+msgid "cedesmember_label_account_bills"
+msgstr ""
+
+msgid "cedesmember_label_fullname"
+msgstr ""

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!-- Mis en commentaire pour éviter que les indexes soient remis à 0 à chaque reinstall... -->
+<object name="membrane_tool" meta_type="MembraneTool">
+  <membrane-type name="CedesMember">
+    <active-workflow-state name="public" />
+    <active-workflow-state name="private" />
+  </membrane-type>
+
+  <index name="getSchool_name" meta_type="ZCTextIndex">
+    <indexed_attr value="getSchool_name"/>
+    <extra name="index_type" value="Cosine Measure"/>
+    <extra name="lexicon_id" value="normalizerlexicon"/>
+  </index>
+
+  <index name="getBill_name" meta_type="ZCTextIndex">
+    <indexed_attr value="getBill_name"/>
+    <extra name="index_type" value="Cosine Measure"/>
+    <extra name="lexicon_id" value="normalizerlexicon"/>
+  </index>
+
+  <index name="getPostal_code" meta_type="FieldIndex">
+    <indexed_attr value="getPostal_code"/>
+  </index>
+
+  <index name="getSchool_postal_code" meta_type="FieldIndex">
+    <indexed_attr value="getPostal_code"/>
+  </index>
+
+  <index name="getMember_type" meta_type="FieldIndex">
+    <indexed_attr value="getMember_type"/>
+  </index>
+
+  <index name="hasFailedAccountingF" meta_type="BooleanIndex">
+    <indexed_attr value="hasFailedAccountingF"/>
+  </index>
+
+  <index name="hasFailedAccountingN" meta_type="BooleanIndex">
+    <indexed_attr value="hasFailedAccountingN"/>
+  </index>
+
+  <index name="hasBillWaitingPayment" meta_type="BooleanIndex">
+    <indexed_attr value="hasBillWaitingPayment"/>
+  </index>
+
+  <column value="getPostal_code"/>
+  <column value="getSchool_postal_code"/>
+  <column value="getMember_type"/>
+
+</object>

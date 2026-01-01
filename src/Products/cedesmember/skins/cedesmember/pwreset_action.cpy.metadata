@@ -1,0 +1,9 @@
+[default]
+proxy = Manager
+
+[actions]
+action.success = redirect_to:string:pwreset_finish
+action.successfree = redirect_to:string:pwreset_finish_cedesfree
+action.success100pc = redirect_to:string:pwreset_finish_cedes100pc
+action.invalid = traverse_to:string:pwreset_invalid
+action.expired = traverse_to:string:pwreset_expired

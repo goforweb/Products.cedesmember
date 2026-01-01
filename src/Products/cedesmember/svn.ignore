@@ -1,0 +1,4 @@
+# svn propset svn:ignore -R -F svn.ignore .
+
+*.mo
+*.pyc

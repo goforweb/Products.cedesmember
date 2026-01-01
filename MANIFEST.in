@@ -1,0 +1,18 @@
+include *.ignore
+include *.txt
+recursive-include docs *.GPL
+recursive-include docs *.txt
+recursive-include src *.backup
+recursive-include src *.cpt
+recursive-include src *.cpy
+recursive-include src *.ignore
+recursive-include src *.metadata
+recursive-include src *.po
+recursive-include src *.pot
+recursive-include src *.pt
+recursive-include src *.py
+recursive-include src *.sh
+recursive-include src *.txt
+recursive-include src *.vpy
+recursive-include src *.xml
+recursive-include src *.zcml
